@@ -6,8 +6,8 @@ const CONFIG = {
     role: "Java, JavaScript, TypeScript",
     bio: "I want to develop everything for the world.",
     email: "hanmir91@gmail.com",
-    linkedin: "morethanmin",
-    github: "https://github.com/ssk910",
+    linkedin: "",
+    github: "ssk910",
     instagram: "",
   },
   projects: [
