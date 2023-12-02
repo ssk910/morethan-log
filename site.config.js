@@ -61,6 +61,13 @@ const CONFIG = {
       appid: "", // Embed Code -> data-app-id value
     },
   },
+  disqus: {
+    enable: true,
+    config: {
+      url: "https://chris-blog-2.disqus.com/",
+      shortname: "chris-blog-2", // A shortname of your Disqus Site
+    }
+  },
   isProd: process.env.VERCEL_ENV === "production", // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
   revalidateTime: 21600 * 7, // revalidate time for [slug], index
 }
