@@ -18,7 +18,7 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "Chris' Blog",
+    title: "Chris's Blog",
     description: "Hello World!",
   },
 
