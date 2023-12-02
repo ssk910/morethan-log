@@ -36,6 +36,7 @@ const Disqus: React.FC<Props> = ({id, slug, title}) => {
   return (
       <>
         <StyledWrapper id="comments">
+
           <DiscussionEmbed
               shortname={CONFIG.disqus.config.shortname}
               config={disqusConfig}
@@ -60,4 +61,7 @@ export default Disqus;
 
 const StyledWrapper = styled.div`
   margin-top: 2.5rem;
+  @media (min-width: 768px) {
+    margin-left: -4rem;
+  }
 `;
