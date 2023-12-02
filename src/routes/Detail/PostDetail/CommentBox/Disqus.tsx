@@ -19,7 +19,10 @@ const Disqus: React.FC<Props> = ({id, slug, title}) => {
   const disqusConfig = {
     url: `${CONFIG.link}/${slug}`,
     identifier: id, // Single post id
-    title: title // Single post title
+    title: title, // Single post title
+    sso: {
+      width: '100%'
+    }
   }
 
   useEffect(() => {
@@ -33,12 +36,12 @@ const Disqus: React.FC<Props> = ({id, slug, title}) => {
   return (
       <>
         <StyledWrapper id="comments">
-          {/*
           <DiscussionEmbed
               shortname={CONFIG.disqus.config.shortname}
               config={disqusConfig}
           />
-          */}
+
+          {/*
           <CommentEmbed
               commentId={id}
               showMedia={true}
@@ -46,6 +49,7 @@ const Disqus: React.FC<Props> = ({id, slug, title}) => {
               width={420}
               height={320}
           />
+          */}
 
         </StyledWrapper>
       </>
