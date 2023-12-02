@@ -1,4 +1,4 @@
-import {DiscussionEmbed} from "disqus-react";
+import {CommentEmbed, DiscussionEmbed} from "disqus-react";
 import {CONFIG} from "site.config"
 import {useEffect, useState} from "react"
 import styled from "@emotion/styled"
@@ -33,10 +33,20 @@ const Disqus: React.FC<Props> = ({id, slug, title}) => {
   return (
       <>
         <StyledWrapper id="comments">
+          {/*
           <DiscussionEmbed
               shortname={CONFIG.disqus.config.shortname}
               config={disqusConfig}
           />
+          */}
+          <CommentEmbed
+              commentId={id}
+              showMedia={true}
+              showParentComment={true}
+              width={420}
+              height={320}
+          />
+
         </StyledWrapper>
       </>
   )
