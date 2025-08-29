@@ -1,13 +1,13 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "Seokgyu Hwang (Chris)",
-    image: "/avatar2.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "Java, JavaScript, TypeScript",
-    bio: "I want to develop everything for the world.",
-    email: "hanmir91@gmail.com",
-    linkedin: "",
-    github: "ssk910",
+    name: "morethanmin",
+    image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    role: "frontend developer",
+    bio: "I develop everything using node.",
+    email: "morethanmin.dev@gmail.com",
+    linkedin: "morethanmin",
+    github: "morethanmin",
     instagram: "",
   },
   projects: [
@@ -18,14 +18,15 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "Chris's Blog",
-    description: "Hello World!",
+    title: "morethan-log",
+    description: "welcome to morethan-log!",
+    scheme: "dark", // 'light' | 'dark' | 'system'
   },
 
   // CONFIG configration (required)
   link: "https://morethan-log.vercel.app",
-  since: 2023, // If leave this empty, current year will be used.
-  lang: "ko-KR", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
+  since: 2022, // If leave this empty, current year will be used.
+  lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
 
   // notion configuration (required)
@@ -46,12 +47,18 @@ const CONFIG = {
       siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
     },
   },
-  utterances: {
+  naverSearchAdvisor: {
     enable: false,
+    config: {
+      siteVerification: process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION || "",
+    },
+  },
+  utterances: {
+    enable: true,
     config: {
       repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
       "issue-term": "og:title",
-      label: "💬 Comments",
+      label: "💬 Utterances",
     },
   },
   cusdis: {
@@ -60,13 +67,6 @@ const CONFIG = {
       host: "https://cusdis.com",
       appid: "", // Embed Code -> data-app-id value
     },
-  },
-  disqus: {
-    enable: true,
-    config: {
-      url: "https://chris-blog-2.disqus.com/",
-      shortname: "chris-blog-2", // A shortname of your Disqus Site
-    }
   },
   isProd: process.env.VERCEL_ENV === "production", // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
   revalidateTime: 21600 * 7, // revalidate time for [slug], index
