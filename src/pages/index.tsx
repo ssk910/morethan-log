@@ -11,7 +11,10 @@ import { filterPosts } from "src/libs/utils/notion"
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = filterPosts(await getPosts())
-  await queryClient.prefetchQuery(queryKey.posts(), () => posts)
+  await queryClient.prefetchQuery({
+    queryKey: queryKey.posts(),
+    queryFn: () => posts
+  })
 
   return {
     props: {

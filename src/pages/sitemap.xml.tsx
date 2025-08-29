@@ -1,9 +1,9 @@
 import { getPosts } from "../apis/notion-client/getPosts"
 import { CONFIG } from "site.config"
 import { getServerSideSitemap, ISitemapField } from "next-sitemap"
-import { GetServerSideProps } from "next"
+import { GetServerSidePropsContext } from "next"
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   const posts = await getPosts()
   const dynamicPaths = posts.map((post) => `${CONFIG.link}/${post.slug}`)
 
@@ -23,8 +23,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     changefreq: "daily",
   })
 
-  return getServerSideSitemap(ctx, fields)
+  return getServerSideSitemap(fields)
 }
 
 // Default export to prevent next.js errors
-export default () => {}
+const SitemapPage = () => {}
+export default SitemapPage
